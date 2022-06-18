@@ -40,19 +40,18 @@ int compareStrings(const char string1[],const char string2[])
             }
             else
             {
-                return 0;
+                return -1;
             }
         }
 
         if(aux != string1_size){
-            return 0;
+            return -1;
         }
-        return 1;
     }
 
     return 0;
 }
-unsigned int copyString(const char oldArray[],char newArray[])
+int copyString(const char oldArray[],char newArray[])
 {
     const unsigned int sz_array = returnSizeArray(oldArray);
 
@@ -61,7 +60,7 @@ unsigned int copyString(const char oldArray[],char newArray[])
         newArray[i] = oldArray[i];
     }
     if(compareStrings(newArray,oldArray)!= 0){
-        return 1;
+        return -1;
     }
     return 0;
 }
