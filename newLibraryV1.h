@@ -1,4 +1,4 @@
-unsigned int returnSizeArray(const char array[])
+int returnSizeArray(const char array[])
 {
     int i = 0;
     for(i;;i++)
@@ -8,7 +8,7 @@ unsigned int returnSizeArray(const char array[])
             return i++;
         }
     }
-    return 0;
+    return -1;
 }   
 
 unsigned int locateIndexChar(char string[],char charll_locate)
