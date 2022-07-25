@@ -1,3 +1,9 @@
+#include <stdio.h>
+
+void clearBuffer(){
+    setbuf(stdin,NULL);
+    setbuf(stdout,NULL);
+}
 int returnSizeArray(const char array[])
 {
     int i = 0;
