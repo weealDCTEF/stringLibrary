@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 
 void clearBuffer(){
     setbuf(stdin,NULL);
@@ -57,6 +58,14 @@ int compareStrings(const char string1[],const char string2[])
 
     return 0;
 }
+int compareSizes(const char string[],const char newArray[]){
+    int i = returnSizeArray(string);
+
+    if(newArray[i] != '\0'){
+        return -1;
+    }
+    return 0;
+}
 int copyString(const char oldArray[],char newArray[])
 {
     const unsigned int sz_array = returnSizeArray(oldArray);
@@ -107,4 +116,3 @@ void toUpperCase(const char string[],char newArray[])
         }
     }
 }
-
