@@ -79,7 +79,7 @@ int copyString(const char oldArray[],char newArray[])
     }
     return 0;
 }
-void toLowerCase(const char string[],char newArray[])
+void toLowerCase_low(char string[])
 {
     char upper[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
     char lower[] = {"abcdefghijklmnopqrstuvwxyz"};
@@ -88,17 +88,17 @@ void toLowerCase(const char string[],char newArray[])
 
     for(unsigned int ctrl = 0; ctrl < size_array;ctrl++)
     {   
-        for(unsigned ctrl1 = 0; ctrl1 < returnSizeArray(upper);ctrl1++)
+        for(unsigned int ctrl1 = 0; ctrl1 < returnSizeArray(upper);ctrl1++)
         {
             if(string[ctrl] == upper[ctrl1])
             {
-                newArray[ctrl] == lower[ctrl];
+                string[ctrl] == lower[ctrl];
             }
         }
     }
     
 }
-void toUpperCase(const char string[],char newArray[])
+void toUpperCase_low(char string[])
 {
     char upper[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ"};
     char lower[] = {"abcdefghijklmnopqrstuvwxyz"};
@@ -107,12 +107,26 @@ void toUpperCase(const char string[],char newArray[])
 
     for(unsigned int ctrl = 0; ctrl < size_array;ctrl++)
     {   
-        for(unsigned ctrl1 = 0; ctrl1 < returnSizeArray(upper);ctrl1++)
+        for(unsigned int ctrl1 = 0; ctrl1 < returnSizeArray(upper);ctrl1++)
         {
             if(string[ctrl] == lower[ctrl1])
             {
-                newArray[ctrl] == upper[ctrl];
+                string[ctrl] == upper[ctrl];
             }
         }
+    }
+}
+
+void toUpperCase_optimized(char string[]){
+    int i;
+    for(i = 0; i < returnSizeArray(string);i++){
+        string[i] = toupper(string[i]);
+    }
+}
+
+void toLowerCase_optimized(char string[]){
+    int i;
+    for(i = 0; i < returnSizeArray(string);i++){
+        string[i] = tolower(string[i]);
     }
 }
